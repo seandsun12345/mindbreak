@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindBreak</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>MindBreak</h1>
+    <p class="subtitle">Micro-pause di benessere per la tua giornata</p>
+  </header>
+
+  <main>
+    <button class="btn" onclick="startBreak()">Inizia una pausa</button>
+
+    <div id="counter"></div>
+
+    <section id="breathing" class="hidden">
+      <div class="circle"></div>
+      <p id="breathText">Inspira…</p>
+      <button class="btn stop" onclick="stopBreak()">Termina</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
