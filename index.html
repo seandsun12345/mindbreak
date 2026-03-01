@@ -1,30 +1,77 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindBreak</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindBreak – Micro-pause di benessere</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>MindBreak</h1>
-    <p class="subtitle">Micro-pause di benessere per la tua giornata</p>
-  </header>
+    <header>
+        <div class="logo">MindBreak</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#esercizi">Esercizi</a>
+            <a href="#mission">Mission</a>
+            <a href="#contatti">Contatti</a>
+        </nav>
+    </header>
 
-  <main>
-    <button class="btn" onclick="startBreak()">Inizia una pausa</button>
-
-    <div id="counter"></div>
-
-    <section id="breathing" class="hidden">
-      <div class="circle"></div>
-      <p id="breathText">Inspira…</p>
-      <button class="btn stop" onclick="stopBreak()">Termina</button>
+    <section id="home" class="section">
+        <h1>Micro-pause di benessere per la tua giornata</h1>
+        <p class="subtitle">Rallenta. Respira. Ricaricati.</p>
+        <button id="startBreak" class="primary-btn">Inizia una pausa</button>
     </section>
-  </main>
 
-  <script src="script.js"></script>
+    <section id="break" class="section hidden">
+        <h2>Respira con calma</h2>
+        <div id="timerCircle">
+            <div id="timerNumber">5</div>
+        </div>
+        <p id="breathText">Inspira…</p>
+        <button id="stopBreak" class="secondary-btn">Termina</button>
+    </section>
+
+    <section id="esercizi" class="section">
+        <h2>Esercizi di benessere</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Respirazione profonda</h3>
+                <p>Un esercizio semplice per calmare mente e corpo.</p>
+            </div>
+            <div class="card">
+                <h3>Stretching leggero</h3>
+                <p>Allunga collo, spalle e schiena per sciogliere le tensioni.</p>
+            </div>
+            <div class="card">
+                <h3>Pausa occhi</h3>
+                <p>Rilassa la vista dopo ore davanti allo schermo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mission" class="section">
+        <h2>La nostra mission</h2>
+        <p>
+            MindBreak nasce per aiutarti a ritrovare equilibrio durante la giornata.
+            Bastano pochi minuti per migliorare concentrazione, respirazione e benessere mentale.
+        </p>
+    </section>
+
+    <section id="contatti" class="section">
+        <h2>Contatti</h2>
+        <p>Per collaborazioni o suggerimenti: <strong>mindbreak@support.com</strong></p>
+    </section>
+
+    <footer>
+        © 2026 MindBreak – Benessere quotidiano
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

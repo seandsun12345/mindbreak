@@ -1,34 +1,44 @@
-function startBreak() {
-  document.getElementById("breathing").classList.remove("hidden");
-  document.querySelector(".btn").classList.add("hidden");
+const startBtn = document.getElementById("startBreak");
+const stopBtn = document.getElementById("stopBreak");
+const breakSection = document.getElementById("break");
+const homeSection = document.getElementById("home");
+const timerNumber = document.getElementById("timerNumber");
+const breathText = document.getElementById("breathText");
 
-  let count = localStorage.getItem("pauseCount") || 0;
-  count++;
-  localStorage.setItem("pauseCount", count);
-  updateCounter();
+let timer;
+let count = 5;
 
-  startBreathingCycle();
+startBtn.addEventListener("click", () => {
+    homeSection.classList.add("hidden");
+    breakSection.classList.remove("hidden");
+    startTimer();
+});
+
+stopBtn.addEventListener("click", () => {
+    resetBreak();
+});
+
+function startTimer() {
+    count = 5;
+    timerNumber.textContent = count;
+
+    timer = setInterval(() => {
+        count--;
+        timerNumber.textContent = count;
+
+        if (count === 3) breathText.textContent = "Espira…";
+        if (count === 1) breathText.textContent = "Rilassati…";
+
+        if (count === 0) {
+            clearInterval(timer);
+            breathText.textContent = "Pausa completata!";
+        }
+    }, 1000);
 }
 
-function stopBreak() {
-  document.getElementById("breathing").classList.add("hidden");
-  document.querySelector(".btn").classList.remove("hidden");
+function resetBreak() {
+    clearInterval(timer);
+    breakSection.classList.add("hidden");
+    homeSection.classList.remove("hidden");
+    breathText.textContent = "Inspira…";
 }
-
-function updateCounter() {
-  let count = localStorage.getItem("pauseCount") || 0;
-  document.getElementById("counter").innerText =
-    "Pause fatte oggi: " + count;
-}
-
-function startBreathingCycle() {
-  const text = document.getElementById("breathText");
-  let phase = 0;
-
-  setInterval(() => {
-    phase = (phase + 1) % 2;
-    text.innerText = phase === 0 ? "Inspira…" : "Espira…";
-  }, 3000);
-}
-
-window.onload = updateCounter;

@@ -1,75 +1,110 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f2f7f5;
-  color: #333;
-  text-align: center;
-  padding: 40px;
-  margin: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #F0EDE3;
+    color: #344E41;
 }
 
-header h1 {
-  font-size: 2.8rem;
-  margin-bottom: 5px;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #344E41;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.section {
+    padding: 80px 40px;
+    text-align: center;
 }
 
 .subtitle {
-  opacity: 0.7;
-  margin-bottom: 40px;
+    font-size: 20px;
+    margin-top: -10px;
+    opacity: 0.8;
 }
 
-.btn {
-  background: #4c9f70;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: 0.2s;
+.primary-btn, .secondary-btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
-.btn:hover {
-  background: #3d865c;
+.primary-btn {
+    background: #A3B18A;
+    color: #344E41;
 }
 
-.stop {
-  background: #c94c4c;
+.primary-btn:hover {
+    background: #8FA77A;
 }
 
-.stop:hover {
-  background: #a83e3e;
+.secondary-btn {
+    background: #6C757D;
+    color: white;
 }
 
-#counter {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  opacity: 0.8;
+.secondary-btn:hover {
+    background: #5A636A;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
-#breathing {
-  margin-top: 40px;
+#timerCircle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid #A3B18A;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 3s infinite ease-in-out;
 }
 
-.circle {
-  width: 150px;
-  height: 150px;
-  background: #4c9f70;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-  animation: breathe 6s infinite;
+#timerNumber {
+    font-size: 40px;
+    font-weight: 600;
 }
 
-@keyframes breathe {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.4); }
-  100% { transform: scale(1); }
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-#breathText {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
